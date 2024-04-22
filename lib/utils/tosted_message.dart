@@ -12,7 +12,9 @@ class tost {
       backgroundColor: Colors.green,
       action: SnackBarAction(
         label: "Next",
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).pushNamed('WorkspacePage');
+        },
       ),
     ));
   }

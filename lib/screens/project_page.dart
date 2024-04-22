@@ -1,3 +1,6 @@
+import 'package:build_resume/utils/global.dart';
+import 'package:build_resume/utils/tosted_message.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/color.dart';
@@ -12,131 +15,240 @@ class ProjectPage extends StatefulWidget {
 }
 
 class _ProjectPageState extends State<ProjectPage> {
-  GlobalKey projectinfo = GlobalKey();
+  GlobalKey<FormState> projectinfo = GlobalKey();
+  TextEditingController projectController = TextEditingController();
+  TextEditingController roleController = TextEditingController();
+  TextEditingController technoController = TextEditingController();
+  TextEditingController prodescriptionController = TextEditingController();
+  bool c = false;
+  bool cAdvance = false;
+  bool flutter = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomWidget.getAppBar(title: "Projects", context: context),
       body: Container(
-        color: primaryTeal,
+        color: Colors.grey.shade200,
         alignment: Alignment.center,
-        child: Column(
-          children: [
-            CustomWidget.primarycontent(
-                title: 'Projects',
-                icon: Icon(
-                  Icons.account_circle_outlined,
-                  size: 100,
-                )),
-            SizedBox(
-              height: 5,
-            ),
-            Expanded(
-                flex: 5,
-                child: Container(
-                  //   color: Colors.green,
-                  child: SingleChildScrollView(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 35, right: 22, left: 22),
+                color: primaryWhite,
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.only(top: 30, left: 25, right: 25),
                     child: Form(
                       key: projectinfo,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 9),
-                            child: Text(
-                              "Project Title",
-                              style: TextStyling.primaryLabels,
-                            ),
-                          ),
+                          CustomWidget.textdetail(text: "Project Title"),
                           Container(
                             height: 60,
                             width: 340,
                             color: primaryWhite,
                             child: TextFormField(
-                              //clipBehavior: Clip.antiAlias,
-                              style: TextStyling.primaryLabels,
+                              controller: projectController,
+                              validator: (val) {
+                                if (val!.isEmpty) {
+                                  return "required";
+                                }
+                              },
+                              onSaved: (val) {
+                                Global.title = val!;
+                              },
+                              style: TextStyling.secondryLabels,
                               decoration: InputDecoration(
+                                  border: OutlineInputBorder(),
                                   hintText: "Resume Builder App",
                                   contentPadding:
                                       EdgeInsets.only(top: 13, left: 15)),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 25, bottom: 9),
-                            child: Text(
-                              "Roles",
-                              style: TextStyling.primaryLabels,
+                          CustomWidget.textdetail(text: "Technpologies"),
+                          Container(
+                            height: 145,
+                            width: 340,
+                            color: Colors.white,
+                            child: Column(
+                              children: [
+                                Row(
+                                  children: [
+                                    Checkbox(
+                                        value: c,
+                                        onChanged: (val) {
+                                          setState(() {
+                                            c = val!;
+                                          });
+                                        }),
+                                    Text(
+                                      "C Programming",
+                                      style: TextStyling.pagelabel,
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    Checkbox(
+                                        value: cAdvance,
+                                        onChanged: (val) {
+                                          setState(() {
+                                            cAdvance = val!;
+                                          });
+                                        }),
+                                    Text(
+                                      "C++",
+                                      style: TextStyling.pagelabel,
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    Checkbox(
+                                        value: flutter,
+                                        onChanged: (val) {
+                                          setState(() {
+                                            flutter = val!;
+                                          });
+                                        }),
+                                    Text(
+                                      "Flutter",
+                                      style: TextStyling.pagelabel,
+                                    ),
+                                  ],
+                                )
+                              ],
                             ),
                           ),
+                          CustomWidget.textdetail(text: "Roles"),
                           Container(
                             height: 60,
                             width: 340,
                             color: primaryWhite,
                             child: TextFormField(
-                              style: TextStyling.primaryLabels,
+                              controller: roleController,
+                              validator: (val) {
+                                if (val!.isEmpty) {
+                                  return "required";
+                                }
+                              },
+                              onSaved: (val) {
+                                Global.roles = val!;
+                              },
+                              style: TextStyling.secondryLabels,
                               decoration: InputDecoration(
+                                  border: OutlineInputBorder(),
                                   hintText:
                                       "Organize team members,Code analysis",
                                   contentPadding:
                                       EdgeInsets.only(top: 20, left: 15)),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 25, bottom: 9),
-                            child: Text(
-                              "Technologies",
-                              style: TextStyling.primaryLabels,
-                            ),
-                          ),
+                          CustomWidget.textdetail(text: "Technologies"),
                           Container(
-                            height: 100,
+                            height: 69,
                             width: 340,
                             color: primaryWhite,
                             child: TextFormField(
-                              style: TextStyling.primaryLabels,
+                              controller: technoController,
+                              validator: (val) {
+                                if (val!.isEmpty) {
+                                  return "required";
+                                }
+                              },
+                              onSaved: (val) {
+                                Global.technologies = val!;
+                              },
+                              style: TextStyling.secondryLabels,
                               decoration: InputDecoration(
+                                  border: OutlineInputBorder(),
                                   hintText: "5- Programmers",
                                   contentPadding:
                                       EdgeInsets.only(top: 25, left: 15)),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 25, bottom: 9),
-                            child: Text(
-                              "Project Description",
-                              style: TextStyling.primaryLabels,
-                            ),
-                          ),
+                          CustomWidget.textdetail(text: "Project Description"),
                           Container(
                             height: 60,
                             width: 340,
                             color: primaryWhite,
                             child: TextFormField(
-                              style: TextStyling.primaryLabels,
+                              controller: prodescriptionController,
+                              validator: (val) {
+                                if (val!.isEmpty) {
+                                  return "required";
+                                }
+                              },
+                              onSaved: (val) {
+                                Global.description = val!;
+                              },
+                              style: TextStyling.secondryLabels,
                               decoration: InputDecoration(
+                                  border: OutlineInputBorder(),
                                   hintText: "Enter Your Project Description",
                                   contentPadding:
                                       EdgeInsets.only(top: 15, left: 15)),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 20, left: 70),
-                            child: Container(
-                              alignment: Alignment.center,
-                              color: Colors.white,
-                              height: 50,
-                              width: 200,
-                              child: Text(
-                                "SAVE",
-                                style: TextStyling.secondaryblack,
-                              ),
+                          Container(
+                            height: 100,
+                            width: 340,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                OutlinedButton(
+                                  onPressed: () {
+                                    projectController.clear();
+                                    roleController.clear();
+                                    technoController.clear();
+                                    prodescriptionController.clear();
+                                  },
+                                  child: Text(
+                                    "clear",
+                                    style: TextStyling.primaryLabels,
+                                  ),
+                                  style: ButtonStyle(),
+                                ),
+                                ElevatedButton(
+                                    onPressed: () {
+                                      if (projectinfo.currentState!
+                                          .validate()) {
+                                        projectinfo.currentState!.save();
+
+                                        tost.tostedmessage(
+                                            context: context,
+                                            messages:
+                                                "Content information successfully....");
+
+                                        projectController.clear();
+                                        roleController.clear();
+                                        technoController.clear();
+                                        prodescriptionController.clear();
+                                      }
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: primaryTeal,
+                                      foregroundColor: primaryWhite,
+                                    ),
+                                    child: Text(
+                                      "Save",
+                                      style: TextStyling.primaryLabels,
+                                    )),
+                              ],
                             ),
                           ),
                         ],
                       ),
                     ),
                   ),
-                )),
-          ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

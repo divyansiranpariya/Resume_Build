@@ -1,3 +1,4 @@
+import 'package:build_resume/utils/tosted_message.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/color.dart';
@@ -21,131 +22,121 @@ class _EducationPageState extends State<EducationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomWidget.getAppBar(title: "Education", context: context),
       body: Container(
-        color: primaryTeal,
-        alignment: Alignment.center,
-        child: Column(
-          children: [
-            CustomWidget.primarycontent(
-                title: 'Education',
-                icon: Icon(
-                  Icons.account_circle_outlined,
-                  size: 100,
-                )),
-            SizedBox(
-              height: 5,
-            ),
-            Expanded(
-                flex: 5,
-                child: Container(
-                  //   color: Colors.green,
-                  child: SingleChildScrollView(
-                    child: Form(
-                      key: eduinfo,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 9),
-                            child: Text(
-                              "Course/Degree",
-                              style: TextStyling.primaryLabels,
-                            ),
-                          ),
-                          Container(
-                            height: 70,
-                            width: 340,
-                            color: primaryWhite,
-                            child: CustomWidget.edutext(
-                                hintitle: ' B.Tech Information Technology',
-                                msg: 'required',
-                                control: courese,
-                                glb: Global.course),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 25, bottom: 9),
-                            child: Text(
-                              "School/Collage/Institute",
-                              style: TextStyling.primaryLabels,
-                            ),
-                          ),
-                          Container(
-                            height: 70,
-                            width: 340,
-                            color: primaryWhite,
-                            child: CustomWidget.edutext(
-                                hintitle: 'marvadi Univercity',
-                                msg: 'required',
-                                control: school,
-                                glb: Global.school),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 25, bottom: 9),
-                            child: Text(
-                              "School/Collage/Institute",
-                              style: TextStyling.primaryLabels,
-                            ),
-                          ),
-                          Container(
-                            height: 70,
-                            width: 340,
-                            color: primaryWhite,
-                            child: CustomWidget.edutext(
-                                hintitle: '70% (or) 7.0 CGPA',
-                                msg: 'required',
-                                control: collage,
-                                glb: Global.collage),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 25, bottom: 9),
-                            child: Text(
-                              "Year of Pass",
-                              style: TextStyling.primaryLabels,
-                            ),
-                          ),
-                          Container(
-                            height: 70,
-                            width: 340,
-                            color: primaryWhite,
-                            child: CustomWidget.edutext(
-                                hintitle: '2019',
-                                msg: 'required',
-                                control: year,
-                                glb: Global.year),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 135, top: 15),
-                            child: Transform.scale(
-                              scale: 1.2,
-                              child: FloatingActionButton(
+        color: Colors.grey.shade200,
+        alignment: Alignment.topCenter,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 35),
+                color: primaryWhite,
+                child: Form(
+                  key: eduinfo,
+                  child: Padding(
+                    padding: const EdgeInsets.all(17),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CustomWidget.textdetail(text: "Course/Degree"),
+                        Container(
+                          height: 70,
+                          width: 340,
+                          //color: primaryWhite,
+                          child: CustomWidget.edutext(
+                              hintitle: ' B.Tech Information Technology',
+                              msg: 'required',
+                              control: courese,
+                              glb: Global.course),
+                        ),
+                        CustomWidget.textdetail(
+                            text: "School/Collage/Institute"),
+                        Container(
+                          height: 70,
+                          width: 340,
+                          color: primaryWhite,
+                          child: CustomWidget.edutext(
+                              hintitle: 'marvadi Univercity',
+                              msg: 'required',
+                              control: school,
+                              glb: Global.school),
+                        ),
+                        CustomWidget.textdetail(
+                            text: "School/Collage/Institute"),
+                        Container(
+                          height: 70,
+                          width: 340,
+                          color: primaryWhite,
+                          child: CustomWidget.edutext(
+                              hintitle: '70% (or) 7.0 CGPA',
+                              msg: 'required',
+                              control: collage,
+                              glb: Global.collage),
+                        ),
+                        CustomWidget.textdetail(text: "Year Of Pass"),
+                        Container(
+                          height: 70,
+                          width: 340,
+                          color: primaryWhite,
+                          child: CustomWidget.edutext(
+                              hintitle: '2019',
+                              msg: 'required',
+                              control: year,
+                              glb: Global.year),
+                        ),
+                        Container(
+                          width: 340,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              OutlinedButton(
                                 onPressed: () {
-                                  if (eduinfo.currentState!.validate()) {
-                                    eduinfo.currentState!.save();
-
-                                    // tost.tostedmessage(
-                                    //     context: context,
-                                    //     messages:
-                                    //     "Content information successfully....");
-
-                                    courese.clear();
-                                    school.clear();
-                                    collage.clear();
-                                    year.clear();
-                                  }
+                                  courese.clear();
+                                  school.clear();
+                                  collage.clear();
+                                  year.clear();
                                 },
                                 child: Text(
-                                  "save",
-                                  style: TextStyling.secondaryblack,
+                                  "clear",
+                                  style: TextStyling.primaryLabels,
                                 ),
+                                style: ButtonStyle(),
                               ),
-                            ),
-                          )
-                        ],
-                      ),
+                              ElevatedButton(
+                                  onPressed: () {
+                                    if (eduinfo.currentState!.validate()) {
+                                      eduinfo.currentState!.save();
+
+                                      tost.tostedmessage(
+                                          context: context,
+                                          messages:
+                                              "Content information successfully....");
+
+                                      courese.clear();
+                                      school.clear();
+                                      collage.clear();
+                                      year.clear();
+                                    }
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: primaryTeal,
+                                    foregroundColor: primaryWhite,
+                                  ),
+                                  child: Text(
+                                    "Save",
+                                    style: TextStyling.primaryLabels,
+                                  )),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                )),
-          ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

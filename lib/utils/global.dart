@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:build_resume/model/resume.dart';
 import 'package:flutter/material.dart';
 
 import '../model/workspace.dart';
@@ -105,12 +108,60 @@ class Global {
       navigation: "DeclarationPage",
     ),
   ];
+
+  static List<TextEditingController> allSkills = [
+    TextEditingController(),
+    TextEditingController(),
+  ];
+
+  //static List<String> skillData = [];
+  static String allresume = " ";
+  static List<Resume> allresumeData = [];
+
+  //contactPage
   static String name = " ";
   static String email = " ";
   static String phone = " ";
   static String address = " ";
+  static File? profileImageFile;
+
+  //career
+  static String career = " ";
+  static String current = " ";
+
+  //education
   static String course = " ";
   static String school = " ";
   static String collage = " ";
   static String year = " ";
+
+  // personal details
+  static String dob = " ";
+  static String nationality = " ";
+  static String gender = " ";
+  static List<String> language = [];
+
+  //experience
+
+  static String company = " ";
+  static String schoo = " ";
+  static String role = " ";
+  static String joindate = " ";
+  static String exitdate = " ";
+
+  //project
+  static String title = " ";
+  static String roles = " ";
+  static String technologies = " ";
+  static String description = " ";
+
+  //reference
+  static String ref = " ";
+  static String desgnation = " ";
+  static String oraganation = " ";
+
+  //Declaration
+  static String descript = " ";
+  static String date = " ";
+  static String place = " ";
 }

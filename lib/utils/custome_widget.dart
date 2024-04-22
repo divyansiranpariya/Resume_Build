@@ -9,25 +9,27 @@ import 'global.dart';
 class CustomWidget {
   static AppBar getAppBar(
       {required String title,
-      required Widget widget,
+      //  required Widget widget,
       required BuildContext context}) {
     return AppBar(
-      leading: Container(),
-      title: Text(
-        title,
-        style: TextStyling.title,
-      ),
       centerTitle: true,
+      title: Padding(
+        padding: const EdgeInsets.only(top: 37),
+        child: Text(
+          title,
+          style: TextStyling.title,
+        ),
+      ),
+      leading: Container(),
       backgroundColor: primaryTeal,
       bottom: AppBar(
         leading: Container(),
-        title: widget,
         backgroundColor: primaryTeal,
-        centerTitle: true,
       ),
     );
   }
 
+  //contact
   static label({
     required String Name,
     required String name,
@@ -35,45 +37,44 @@ class CustomWidget {
     required dynamic control,
     required String statement,
     required String message,
+    required Icon icon,
   }) {
     return Padding(
       padding: const EdgeInsets.only(top: 30, right: 20, left: 20),
       child: Row(
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(bottom: 4),
-                child: Text(
-                  Name,
-                  style: TextStyling.secondaryblack,
-                ),
+          SizedBox(
+            //  color: Colors.pink,
+            width: 45,
+            height: 45,
+            child: icon,
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          Container(
+            height: height,
+            width: 238,
+            decoration: BoxDecoration(
+                //color: Colors.cyan,
+                borderRadius: BorderRadius.all(Radius.circular(8))),
+            child: TextFormField(
+              validator: (val) {
+                if (val!.isEmpty) {
+                  return statement;
+                }
+              },
+              onSaved: (val) {
+                message = val!;
+              },
+              controller: control,
+              decoration: InputDecoration(
+                // border: OutlineInputBorder(),
+                disabledBorder: OutlineInputBorder(),
+                contentPadding: EdgeInsets.all(12),
+                hintText: name,
               ),
-              Container(
-                height: height,
-                width: 370,
-                decoration: BoxDecoration(
-                    color: primaryWhite,
-                    borderRadius: BorderRadius.all(Radius.circular(8))),
-                child: TextFormField(
-                  validator: (val) {
-                    if (val!.isEmpty) {
-                      return statement;
-                    }
-                  },
-                  onSaved: (val) {
-                    message = val!;
-                  },
-                  controller: control,
-                  decoration: InputDecoration(
-                    // border: OutlineInputBorder(),
-                    contentPadding: EdgeInsets.all(12),
-                    hintText: name,
-                  ),
-                ),
-              ),
-            ],
+            ),
           ),
         ],
       ),
@@ -84,7 +85,7 @@ class CustomWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 50, bottom: 30),
       child: Container(
-        // color: Colors.cyanAccent,
+        //color: Colors.cyanAccent,
         height: 230,
         width: 180,
         child: Stack(
@@ -145,11 +146,12 @@ class CustomWidget {
       padding: const EdgeInsets.only(top: 10, bottom: 7),
       child: Text(
         text,
-        style: TextStyling.primaryLabels,
+        style: TextStyling.contentLabes,
       ),
     );
   }
 
+  //educationform
   static edutext({
     required String msg,
     required String glb,
@@ -157,7 +159,7 @@ class CustomWidget {
     required String hintitle,
   }) {
     return TextFormField(
-      style: TextStyling.primaryLabels,
+      style: TextStyling.secondryLabels,
       controller: control,
       validator: (val) {
         if (val!.isEmpty) {
@@ -168,6 +170,7 @@ class CustomWidget {
         glb = val!;
       },
       decoration: InputDecoration(
+          border: OutlineInputBorder(),
           hintText: hintitle,
           contentPadding: EdgeInsets.only(top: 20, left: 15)),
     );

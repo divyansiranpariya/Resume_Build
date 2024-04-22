@@ -21,11 +21,16 @@ class _WorkspacePageState extends State<WorkspacePage> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
+        title: Text(
+          "Build Options",
+          style: TextStyling.title,
+        ),
+        centerTitle: true,
         leading: Container(),
         backgroundColor: primaryTeal,
       ),
       body: Container(
-        color: primaryTeal,
+        color: primaryWhite,
         child: GridView.count(
           childAspectRatio: 6 / 8,
           padding: const EdgeInsets.all(20),
@@ -45,6 +50,14 @@ class _WorkspacePageState extends State<WorkspacePage> {
                       decoration: BoxDecoration(
                         color: primaryWhite,
                         borderRadius: BorderRadius.circular(25),
+                        boxShadow: <BoxShadow>[
+                          BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 2,
+                            spreadRadius: 2,
+                            offset: Offset(4, 3),
+                          ),
+                        ],
                       ),
                       padding: EdgeInsets.only(bottom: 18),
                       alignment: Alignment.bottomCenter,
@@ -66,34 +79,6 @@ class _WorkspacePageState extends State<WorkspacePage> {
                     ),
                   ],
                 ),
-                // Column(
-                //   children: [
-                //     Container(
-                //       child: Expanded(
-                //         flex: 2,
-                //         child: Container(
-                //           alignment: Alignment.center,
-                //           child: e.icon,
-                //           decoration: BoxDecoration(
-                //               color: Colors.teal.shade400,
-                //               borderRadius: BorderRadius.only(
-                //                   topRight: Radius.circular(40))),
-                //         ),
-                //       ),
-                //     ),
-                //     Expanded(
-                //         flex: 1,
-                //         child: Container(
-                //           alignment: Alignment.center,
-                //
-                //           decoration: BoxDecoration(
-                //               color: Colors.white,
-                //
-                //               borderRadius: BorderRadius.only(
-                //                   bottomLeft: Radius.circular(40))),
-                //         )),
-                //   ],
-                // ),
               ),
             )
           ],

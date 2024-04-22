@@ -6,7 +6,7 @@ import 'color.dart';
 
 class TextStyling {
   static TextStyle title = TextStyle(
-    fontSize: 22,
+    fontSize: 25,
     color: primaryWhite,
     fontWeight: FontWeight.bold,
   );
@@ -17,6 +17,8 @@ class TextStyling {
   );
   static TextStyle primaryLabels =
       TextStyle(fontSize: 22, color: primaryBlack, fontWeight: FontWeight.w500);
+  static TextStyle contentLabes =
+      TextStyle(fontSize: 22, color: primaryTeal, fontWeight: FontWeight.w500);
   static TextStyle secondryLabels = TextStyle(
     fontSize: 18,
     color: secondaryGrey,
@@ -30,5 +32,40 @@ class TextStyling {
     fontSize: 20.5,
     color: primaryTeal.withOpacity(0.5),
     //fontWeight: FontWeight.bold,
+  );
+  static TextStyle pagelabel = TextStyle(
+    fontSize: 18,
+    // color: primaryTeal.withOpacity(0.5),
+    //fontWeight: FontWeight.bold,
+  );
+
+  static TextStyle pdffont = TextStyle(
+    fontSize: 16,
+    color: Colors.white,
+    fontWeight: FontWeight.bold,
+  );
+  static TextStyle pdfsmallfont = TextStyle(
+    fontSize: 14,
+    color: Colors.white,
+    // fontWeight: FontWeight.bold,
+  );
+  static TextStyle pdfsmallcontentfont = TextStyle(
+    fontSize: 16,
+    color: Colors.white,
+    // fontWeight: FontWeight.bold,
+  );
+  static TextStyle pdftitlefont = TextStyle(
+    fontSize: 15,
+    color: Colors.white,
+    // fontWeight: FontWeight.bold,
+  );
+  static TextStyle pdfblackfont = TextStyle(
+    fontSize: 17,
+    color: Colors.black,
+    fontWeight: FontWeight.bold,
+  );
+  static TextStyle pdfgreyfont = TextStyle(
+    fontSize: 14,
+    color: Colors.grey.shade500,
   );
 }
