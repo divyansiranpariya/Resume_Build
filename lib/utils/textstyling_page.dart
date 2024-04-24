@@ -1,4 +1,6 @@
 import 'dart:ui';
+import 'package:pdf/pdf.dart';
+import 'package:pdf/widgets.dart.' as pw;
 
 import 'package:flutter/material.dart';
 
@@ -39,32 +41,61 @@ class TextStyling {
     //fontWeight: FontWeight.bold,
   );
 
-  static TextStyle pdffont = TextStyle(
+  static pw.TextStyle pdffont = pw.TextStyle(
     fontSize: 16,
-    color: Colors.white,
-    fontWeight: FontWeight.bold,
+    color: white,
+    fontWeight: pw.FontWeight.bold,
   );
-  static TextStyle pdfsmallfont = TextStyle(
+  static pw.TextStyle pdfsmallfont = pw.TextStyle(
     fontSize: 14,
-    color: Colors.white,
+    color: white,
     // fontWeight: FontWeight.bold,
   );
-  static TextStyle pdfsmallcontentfont = TextStyle(
+  static pw.TextStyle pdfsmallcontentfont = pw.TextStyle(
     fontSize: 16,
-    color: Colors.white,
+    color: white,
     // fontWeight: FontWeight.bold,
   );
-  static TextStyle pdftitlefont = TextStyle(
+  static pw.TextStyle pdftitlefont = pw.TextStyle(
     fontSize: 15,
-    color: Colors.white,
+    color: white,
     // fontWeight: FontWeight.bold,
   );
-  static TextStyle pdfblackfont = TextStyle(
+  static pw.TextStyle pdfblackfont = pw.TextStyle(
     fontSize: 17,
-    color: Colors.black,
+    color: black,
+    fontWeight: pw.FontWeight.bold,
+  );
+  static pw.TextStyle pdfgreyfont = pw.TextStyle(
+    fontSize: 14,
+    color: grey,
+  );
+  static TextStyle pdffonts = TextStyle(
+    fontSize: 16,
+    color: primaryWhite,
     fontWeight: FontWeight.bold,
   );
-  static TextStyle pdfgreyfont = TextStyle(
+  static TextStyle pdfsmallfonts = TextStyle(
+    fontSize: 14,
+    color: primaryWhite,
+    // fontWeight: FontWeight.bold,
+  );
+  static TextStyle pdfsmallcontentfonts = TextStyle(
+    fontSize: 16,
+    color: primaryWhite,
+    // fontWeight: FontWeight.bold,
+  );
+  static TextStyle pdftitlefonts = TextStyle(
+    fontSize: 15,
+    color: primaryWhite,
+    // fontWeight: FontWeight.bold,
+  );
+  static TextStyle pdfblackfonts = TextStyle(
+    fontSize: 17,
+    color: primaryBlack,
+    fontWeight: FontWeight.bold,
+  );
+  static TextStyle pdfgreyfonts = TextStyle(
     fontSize: 14,
     color: Colors.grey.shade500,
   );

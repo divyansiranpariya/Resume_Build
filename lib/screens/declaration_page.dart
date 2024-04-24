@@ -222,10 +222,25 @@ class _DeclarationPageState extends State<DeclarationPage> {
                                                     .validate()) {
                                                   declarationInfo.currentState!
                                                       .save();
-                                                  tost.tostedmessage(
-                                                      context: context,
-                                                      messages:
-                                                          "Declaration information saved successfully..");
+                                                  ScaffoldMessenger.of(context)
+                                                      .showSnackBar(SnackBar(
+                                                    content: Text(
+                                                        "saved information suceesfully.."),
+                                                    behavior: SnackBarBehavior
+                                                        .floating,
+                                                    backgroundColor:
+                                                        Colors.green,
+                                                    action: SnackBarAction(
+                                                      label: "Next",
+                                                      onPressed: () {
+                                                        Navigator.of(context)
+                                                            .pushNamedAndRemoveUntil(
+                                                                '/',
+                                                                (route) =>
+                                                                    false);
+                                                      },
+                                                    ),
+                                                  ));
 
                                                   descriptionController.clear();
                                                   dateController.clear();

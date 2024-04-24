@@ -117,6 +117,7 @@ class Global {
   //static List<String> skillData = [];
   static String allresume = " ";
   static List<Resume> allresumeData = [];
+  static Resume? selectedResume;
 
   //contactPage
   static String name = " ";
