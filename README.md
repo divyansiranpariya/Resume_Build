@@ -1,16 +1,10 @@
-# build_resume
+# Resume Builder
 
-A new Flutter project.
+   Welcome to the Resume Builder App! This application helps users create professional resumes with ease. It offers customizable templates, an intuitive interface, and a range of features to help users build their resumes quickly and effectively.
 
-## Getting Started
+   For MoblieApp:
 
-This project is a starting point for a Flutter application.
+## Features
+* Create Resume: Allows users to create a new resume with a name and enter key information.
+* View Resume: Users can view the resumes they've created.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
