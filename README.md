@@ -64,6 +64,5 @@
 ![R13](https://github.com/divyansiranpariya/Resume_Build/assets/154776848/13145024-b777-4a3e-95bb-31220c684ad8)
 ![R14](https://github.com/divyansiranpariya/Resume_Build/assets/154776848/60d81530-5caa-4fb1-a92b-09ad6bd9a2c9)
 ![r15](https://github.com/divyansiranpariya/Resume_Build/assets/154776848/d6100b10-aca5-4699-9892-bb5b82348e27)
-
-
-
+![resumeview](https://github.com/divyansiranpariya/Resume_Build/assets/154776848/9f59dd0b-ebf2-4674-817e-37f991ca9028)
+![frpdf](https://github.com/divyansiranpariya/Resume_Build/assets/154776848/f3bc3499-c900-4cb2-a897-fecebe0daddf)
